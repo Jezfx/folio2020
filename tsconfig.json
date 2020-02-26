@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "allowJs": true,
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "strictNullChecks": false, //TODO: turn this back on again
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "src": ["/"]
+    },
+    "forceConsistentCasingInFileNames": true
+  }
+  // "include": ["src", "./tests/jest-dom.d.ts"],
+  // "files": ["./node_modules/@testing-library/jest-dom/extend-expect.d.ts"]
+}

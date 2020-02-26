@@ -1,3 +1,19 @@
+# Things to include in the blog
+
+### Rebass text theme
+
+Being able to define default theme styles from the theme file
+Then overriding that on an individual basis
+problem was that that className didn't get passed across
+So needed to make a Text component which explisitly passes it over
+
+### Clients list
+
+### HTML serilizer
+
+To format dynamic content and also spesify how you want each of the
+content blocks to be styled for case-by-case basis
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
