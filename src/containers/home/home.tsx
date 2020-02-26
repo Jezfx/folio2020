@@ -1,39 +1,14 @@
-import React, { ReactNode } from "react";
-// import { RichText, Elements } from "prismic-reactjs";
-// import { htmlSerializer } from "src/gatsby/htmlSerializer";
+import React from "react";
 
 import RichText from "src/components/rich-text";
 import SectionWrapper from "src/components/section-wrapper";
 import { Paragon, GreatPrimer, BodyCopy, Minion } from "src/components/text";
 
+import ClientList from "./components/home-client-list";
+
 import * as Hooks from "./home.hooks";
 import * as Types from "./home.types";
 import * as Styles from "./home.styles";
-
-const renderClientsList = (clientList: Types.ClientList[]): JSX.Element => (
-  <ul>
-    {clientList.map(
-      (yearOfWork: Types.ClientList): ReactNode => {
-        const {
-          primary: { clients_year },
-          items
-        } = yearOfWork;
-
-        const clients = items.map(
-          (client: Types.ClientItemType): ReactNode => (
-            <a href={client.clients_link.url!}>{client.clients_name}</a>
-          )
-        );
-
-        return (
-          <li>
-            {clients} <span>{clients_year}</span>
-          </li>
-        );
-      }
-    )}
-  </ul>
-);
 
 export default (): JSX.Element => {
   const { prismicHome, allPrismicGlobal } = Hooks.useHomePageQuery();
@@ -52,7 +27,7 @@ export default (): JSX.Element => {
       <Minion>minon</Minion>
 
       <SectionWrapper title="👨‍💻 Work">
-        {renderClientsList(clientList)}
+        <ClientList clients={clientList} />
       </SectionWrapper>
 
       {/* TODO: typecheck the section arg  */}

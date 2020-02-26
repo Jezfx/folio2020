@@ -16,10 +16,14 @@ const elementTypes: Types.ElementTypes = {
   em: "em"
 };
 
-export default ({ content, styles }) => {
-  const htmlSerializer = function(type, element, content, children, key) {
-    console.log(type, element, content, children, key);
-
+export default ({ content, styles }: Types.RichTextProps) => {
+  const htmlSerializer = function(
+    type: Types.ElementTypeOption,
+    element: any,
+    content: any,
+    children: any,
+    key: number
+  ) {
     const hasMatch = !!styles[type];
 
     if (hasMatch) {

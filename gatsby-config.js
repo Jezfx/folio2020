@@ -25,6 +25,13 @@ module.exports = {
   plugins: [
     "gatsby-plugin-theme-ui",
     {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./src/graphql.types.ts`,
+        codegenDelay: 1000000
+      }
+    },
+    {
       resolve: "gatsby-source-prismic",
       options: {
         repositoryName: "mynewportfolio",
