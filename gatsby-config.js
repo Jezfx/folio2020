@@ -28,7 +28,12 @@ module.exports = {
       resolve: "gatsby-source-prismic",
       options: {
         repositoryName: "mynewportfolio",
-        accessToken: `${process.env.API_KEY}`
+        accessToken: `${process.env.API_KEY}`,
+        schemas: {
+          page: require("./src/schemas/page.json"),
+          home: require("./src/schemas/home.json"),
+          global: require("./src/schemas/global.json")
+        }
         // htmlSerializer: () => prismicHtmlSerializer
       }
     },
