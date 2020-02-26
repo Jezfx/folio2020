@@ -1,6 +1,8 @@
 import React from "react";
 import { RichText, Elements } from "prismic-reactjs";
 
+import { Paragon } from "../components/text";
+
 // -- Function to add unique key to props
 const propsWithUniqueKey = function(props, key) {
   return Object.assign(props || {}, { key });
@@ -12,11 +14,7 @@ export const htmlSerializer = function(type, element, content, children, key) {
 
   switch (type) {
     case Elements.heading1: // Heading 1
-      return React.createElement(
-        "h1",
-        propsWithUniqueKey(props, key),
-        children
-      );
+      return <Paragon>{children}</Paragon>;
 
     case Elements.heading2: // Heading 2
       return React.createElement(

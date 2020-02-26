@@ -1,5 +1,8 @@
 import React, { ReactNode } from "react";
+// import { RichText, Elements } from "prismic-reactjs";
+// import { htmlSerializer } from "src/gatsby/htmlSerializer";
 
+import RichText from "src/components/rich-text";
 import SectionWrapper from "src/components/section-wrapper";
 import { Paragon, GreatPrimer, BodyCopy, Minion } from "src/components/text";
 
@@ -32,17 +35,16 @@ const renderClientsList = (clientList: Types.ClientList[]): JSX.Element => (
   </ul>
 );
 
-export default (): ReactNode => {
+export default (): JSX.Element => {
   const { prismicHome, allPrismicGlobal } = Hooks.useHomePageQuery();
   const clientList = allPrismicGlobal.edges[0].node.data.body;
 
   return (
     <Styles.Container>
-      <Styles.HeroWrapper
-        dangerouslySetInnerHTML={{ __html: prismicHome.data.hero.html }}
+      <RichText
+        content={prismicHome.data.hero.raw}
+        styles={{ heading1: GreatPrimer, heading2: BodyCopy }}
       />
-
-      {/* <StyledHTMLOutput content={content} styles={{header1: "paragon", header2: "greatPrimer",}} /> */}
 
       <Paragon>Paragon</Paragon>
       <GreatPrimer>Great Primer</GreatPrimer>

@@ -12,16 +12,15 @@ export const useHomePageQuery = (): HomePageQueryQuery => {
             hero {
               html
               text
-              raw {
-                type
-                text
-              }
+              raw
             }
             body {
-              primary {
-                content_section_header
-                content_section_body {
-                  html
+              ... on PrismicHomeBodyContentSection {
+                primary {
+                  content_section_header
+                  content_section_body {
+                    html
+                  }
                 }
               }
             }
@@ -33,17 +32,16 @@ export const useHomePageQuery = (): HomePageQueryQuery => {
             node {
               data {
                 body {
-                  primary {
-                    clients_year
-                  }
-                  items {
-                    clients_name
-                    clients_link {
-                      url
-                      link_type
-                      raw {
+                  ... on PrismicGlobalBodyClients {
+                    primary {
+                      clients_year
+                    }
+                    items {
+                      clients_name
+                      clients_link {
                         url
                         link_type
+                        raw
                       }
                     }
                   }
