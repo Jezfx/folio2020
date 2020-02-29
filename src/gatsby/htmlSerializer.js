@@ -1,7 +1,7 @@
 import React from "react";
-import { RichText, Elements } from "prismic-reactjs";
+import { Elements } from "prismic-reactjs";
 
-import { Paragon } from "../components/text";
+import { Paragon, GreatPrimer, BodyCopy } from "../components/text";
 
 // -- Function to add unique key to props
 const propsWithUniqueKey = function(props, key) {
@@ -14,45 +14,53 @@ export const htmlSerializer = function(type, element, content, children, key) {
 
   switch (type) {
     case Elements.heading1: // Heading 1
-      return <Paragon>{children}</Paragon>;
+      return (
+        <Paragon {...propsWithUniqueKey(props, key)} as="h1">
+          {children}
+        </Paragon>
+      );
 
     case Elements.heading2: // Heading 2
-      return React.createElement(
-        "h2",
-        propsWithUniqueKey(props, key),
-        children
+      return (
+        <GreatPrimer {...propsWithUniqueKey(props, key)} as="h2">
+          {children}
+        </GreatPrimer>
       );
 
     case Elements.heading3: // Heading 3
-      return React.createElement(
-        "h3",
-        propsWithUniqueKey(props, key),
-        children
+      return (
+        <GreatPrimer {...propsWithUniqueKey(props, key)} as="h3">
+          {children}
+        </GreatPrimer>
       );
 
     case Elements.heading4: // Heading 4
-      return React.createElement(
-        "h4",
-        propsWithUniqueKey(props, key),
-        children
+      return (
+        <GreatPrimer {...propsWithUniqueKey(props, key)} as="h4">
+          {children}
+        </GreatPrimer>
       );
 
     case Elements.heading5: // Heading 5
-      return React.createElement(
-        "h5",
-        propsWithUniqueKey(props, key),
-        children
+      return (
+        <GreatPrimer {...propsWithUniqueKey(props, key)} as="h5">
+          {children}
+        </GreatPrimer>
       );
 
     case Elements.heading6: // Heading 6
-      return React.createElement(
-        "h6",
-        propsWithUniqueKey(props, key),
-        children
+      return (
+        <GreatPrimer {...propsWithUniqueKey(props, key)} as="h6">
+          {children}
+        </GreatPrimer>
       );
 
     case Elements.paragraph: // Paragraph
-      return React.createElement("p", propsWithUniqueKey(props, key), children);
+      return (
+        <BodyCopy {...propsWithUniqueKey(props, key)} as="p">
+          {children}
+        </BodyCopy>
+      );
 
     case Elements.preformatted: // Preformatted
       return React.createElement(

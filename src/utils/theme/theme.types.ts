@@ -9,7 +9,7 @@ export type BreakpointSize =
 
 export type Breakpoints = { [option in BreakpointSize]: string };
 
-export type FontSizeOption = "small" | "base" | "medium" | "large" | "xLarge";
+export type FontSizeOption = "small" | "base" | "medium" | "large";
 
 export type FontSizes = { [option in FontSizeOption]: number };
 

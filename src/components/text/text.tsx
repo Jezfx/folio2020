@@ -13,7 +13,7 @@ const Paragon = (props: TextProps): JSX.Element => (
 const GreatPrimer = (props: TextProps): JSX.Element => (
   <Text
     as="h2"
-    color="clearDay"
+    color="white"
     variant="greatPrimer"
     className={props.className}
     {...props}
@@ -22,7 +22,7 @@ const GreatPrimer = (props: TextProps): JSX.Element => (
 const BodyCopy = (props: TextProps): JSX.Element => (
   <Text
     as="p"
-    color="corduroy"
+    color="nobel"
     variant="bodyCopy"
     className={props.className}
     {...props}
@@ -31,7 +31,7 @@ const BodyCopy = (props: TextProps): JSX.Element => (
 const Minion = (props: TextProps): JSX.Element => (
   <Text
     as="p"
-    color="corduroy"
+    color="cruise"
     variant="minion"
     className={props.className}
     {...props}

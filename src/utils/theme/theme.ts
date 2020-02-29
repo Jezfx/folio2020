@@ -1,11 +1,12 @@
 import * as Types from "./theme.types";
 
+// TODO: add these font sizes 14px for the menu items
+
 export const fontSizes: Types.FontSizes = {
   small: 13,
-  base: 16,
+  base: 18,
   medium: 20,
-  large: 22,
-  xLarge: 29
+  large: 24
 };
 
 export const target = {
@@ -47,18 +48,19 @@ export const getCurrentBreakpoint = (innerWidth: number): string => {
 };
 
 export const widths: Types.Widths = {
-  container: "1124px",
+  container: "1134px",
   gutter: "20px"
 };
 
 export const colors = {
-  brandDark: "#000",
-  brandLight: "#fff",
   background: "#000",
   boulder: "#797979",
+  black: "#000",
+  white: "#fff",
   clearDay: "#E6FFFB",
   corduroy: "#617773",
-  foam: "#D4FDF7"
+  cruise: "#AEE7DE",
+  nobel: "#B7B7B7"
 };
 
 export const fonts = {
@@ -76,15 +78,15 @@ export default {
   breakpoints: Object.values(themeBreakpoints),
   text: {
     paragon: {
-      fontSize: [2, 3],
+      fontSize: [3, 2],
       letterSpacing: "0.67px",
       lineHeight: "57px",
       fontWeight: "bold",
       transition: "font-size 0.2s ease"
     },
     greatPrimer: {
-      fontSize: [4, 3],
-      letterSpacing: "0.73px",
+      fontSize: [2, 3],
+      letterSpacing: "0.2px",
       lineHeight: "36px",
       fontWeight: "normal",
       transition: "font-size 0.2s ease"
@@ -98,7 +100,7 @@ export default {
     },
     minion: {
       fontSize: [1, 0],
-      letterSpacing: "2.65px",
+      letterSpacing: "2px",
       lineHeight: "29px",
       fontWeight: "bold",
       textTransform: "uppercase",

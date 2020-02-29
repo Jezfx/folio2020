@@ -33,6 +33,13 @@
             "icon": "texture",
             "display": "list",
             "non-repeat": {
+              "icon": {
+                "type": "Text",
+                "config": {
+                  "label": "Icon",
+                  "placeholder": "👩‍💻"
+                }
+              },
               "content_section_header": {
                 "type": "Text",
                 "config": {

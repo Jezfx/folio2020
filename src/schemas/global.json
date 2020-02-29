@@ -83,5 +83,27 @@
         }
       }
     }
+  },
+  "Articles": {
+    "articles": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "title": {
+            "type": "Text",
+            "config": {
+              "label": "Title"
+            }
+          },
+          "link": {
+            "type": "Link",
+            "config": {
+              "label": "Link"
+            }
+          }
+        },
+        "label": "Articles"
+      }
+    }
   }
 }

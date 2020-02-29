@@ -4,9 +4,16 @@ import kebabcase from "lodash.kebabcase";
 import * as Hooks from "./header-menu.hooks";
 import * as Styles from "./header-menu.styles";
 
-const Link = (href: string, text: string): JSX.Element => (
+const Link = (href: string, text: string, isLast = false): JSX.Element => (
   <Styles.ListItem key={kebabcase(text)}>
-    <a href={href}>{text}</a>
+    <Styles.Link
+      href={href}
+      forwardedAs="a"
+      isLogo={isLast}
+      fontSize={[14, 14, 14]}
+    >
+      {text}
+    </Styles.Link>
   </Styles.ListItem>
 );
 
@@ -23,7 +30,7 @@ const Menu: React.FunctionComponent = (): JSX.Element => {
         {social_media_links.map(({ link_href, link_text }) =>
           Link(link_href, link_text)
         )}
-        {Link(email_address, email_address)}
+        {Link(email_address, email_address, true)}
       </Styles.List>
     </Styles.Container>
   );

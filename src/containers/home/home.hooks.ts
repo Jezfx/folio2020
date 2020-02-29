@@ -17,9 +17,10 @@ export const useHomePageQuery = (): HomePageQueryQuery => {
             body {
               ... on PrismicHomeBodyContentSection {
                 primary {
+                  icon
                   content_section_header
                   content_section_body {
-                    html
+                    raw
                   }
                 }
               }
@@ -31,6 +32,12 @@ export const useHomePageQuery = (): HomePageQueryQuery => {
           edges {
             node {
               data {
+                articles {
+                  title
+                  link {
+                    raw
+                  }
+                }
                 body {
                   ... on PrismicGlobalBodyClients {
                     primary {
