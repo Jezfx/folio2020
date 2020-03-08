@@ -33,7 +33,6 @@ export const pageQuery = graphql`
                     raw
                   }
                 }
-                slice_type
                 slice_label
               }
             }
