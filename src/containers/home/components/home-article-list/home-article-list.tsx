@@ -10,7 +10,7 @@ const ArticleList: React.FunctionComponent<Types.ArticleListProps> = ({
 }): JSX.Element => (
   <Styles.ArticlesList>
     {articles.map(({ title, link }) => (
-      <Styles.ArticleItem>
+      <Styles.ArticleItem key={link.raw.url}>
         <Styles.ArticleLink forwardedAs="a" href={link.raw.url!}>
           {title}
         </Styles.ArticleLink>

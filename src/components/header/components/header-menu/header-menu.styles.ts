@@ -1,6 +1,8 @@
 import styled, { StyledComponent } from "styled-components";
 import { BodyCopy } from "src/components/text";
 
+import { breakpoints } from "src/utils/theme/theme";
+
 export const Container = styled.nav``;
 
 export const List = styled.ul`
@@ -8,6 +10,14 @@ export const List = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
+
+  li:not(:last-child) {
+    display: none;
+
+    @media (min-width: ${breakpoints.medium}) {
+      display: inline;
+    }
+  }
 
   li:last-child {
     margin-left: 20px;

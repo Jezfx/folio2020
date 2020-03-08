@@ -78,9 +78,9 @@ export default {
   breakpoints: Object.values(themeBreakpoints),
   text: {
     paragon: {
-      fontSize: [3, 2],
+      fontSize: [2],
       letterSpacing: "0.67px",
-      lineHeight: "57px",
+      lineHeight: ["30px", "30px", "57px"],
       fontWeight: "bold",
       transition: "font-size 0.2s ease"
     },
@@ -99,7 +99,7 @@ export default {
       transition: "font-size 0.2s ease"
     },
     minion: {
-      fontSize: [1, 0],
+      fontSize: [0],
       letterSpacing: "2px",
       lineHeight: "29px",
       fontWeight: "bold",

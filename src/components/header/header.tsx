@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { Link } from "gatsby";
+
 import Menu from "./components/header-menu";
 
 import * as Styles from "./header.styles";
@@ -9,7 +11,9 @@ const Header: React.FunctionComponent = (): JSX.Element => {
   return (
     <Styles.Container>
       <Styles.LogoWrapper>
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
       </Styles.LogoWrapper>
       <Menu />
     </Styles.Container>

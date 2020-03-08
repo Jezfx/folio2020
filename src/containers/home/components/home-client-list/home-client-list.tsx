@@ -23,7 +23,11 @@ const ClientList: React.FunctionComponent<Types.ClientListProps> = ({
             ): ReactNode => {
               const lastItem = items.length === index + 1;
               return (
-                <Styles.ClientLink forwardedAs="a" href={clients_link.url!}>
+                <Styles.ClientLink
+                  forwardedAs="a"
+                  href={clients_link.url!}
+                  key={clients_link.url}
+                >
                   {clients_name}
                   {!lastItem && `,`}
                 </Styles.ClientLink>
@@ -33,7 +37,6 @@ const ClientList: React.FunctionComponent<Types.ClientListProps> = ({
 
           return (
             <Styles.ClientItem key={index}>
-              {clients}{" "}
               <Styles.ClientYear
                 color="cruise"
                 forwardedAs="span"
@@ -41,6 +44,7 @@ const ClientList: React.FunctionComponent<Types.ClientListProps> = ({
               >
                 {clients_year}
               </Styles.ClientYear>
+              {clients}{" "}
             </Styles.ClientItem>
           );
         }

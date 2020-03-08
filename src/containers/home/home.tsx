@@ -2,6 +2,7 @@ import React from "react";
 
 import RichText from "src/components/rich-text";
 import SectionWrapper from "src/components/section-wrapper";
+import SocialIcons from "src/components/social-icons";
 import { GreatPrimer, BodyCopy } from "src/components/text";
 
 import ClientList from "./components/home-client-list";
@@ -21,10 +22,15 @@ export default (): JSX.Element => {
   return (
     <Styles.Container>
       <Styles.HeroWrapper>
-        <RichText
-          content={prismicHome.data.hero.raw}
-          styles={{ heading1: GreatPrimer, heading2: BodyCopy }}
-        />
+        <>
+          <RichText
+            content={prismicHome.data.hero.raw}
+            styles={{ heading1: GreatPrimer, heading2: BodyCopy }}
+          />
+          <Styles.SocialIconsWrapper>
+            <SocialIcons />
+          </Styles.SocialIconsWrapper>
+        </>
       </Styles.HeroWrapper>
 
       <SectionWrapper title="Work" icon={`👨‍💻`}>
@@ -36,8 +42,9 @@ export default (): JSX.Element => {
       </SectionWrapper>
 
       {/* TODO: typecheck the section arg  */}
-      {prismicHome.data.body.map(section => (
+      {prismicHome.data.body.map((section, index) => (
         <SectionWrapper
+          key={index}
           title={section.primary.content_section_header}
           icon={section.primary.icon}
           content={section.primary.content_section_body.raw}

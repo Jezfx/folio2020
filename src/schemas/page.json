@@ -9,7 +9,7 @@
     "hero": {
       "type": "StructuredText",
       "config": {
-        "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6",
+        "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, hyperlink, image",
         "label": "Hero"
       }
     },
@@ -33,6 +33,13 @@
             "icon": "texture",
             "display": "list",
             "non-repeat": {
+              "icon": {
+                "type": "Text",
+                "config": {
+                  "label": "Icon",
+                  "placeholder": "👩‍💻"
+                }
+              },
               "content_section_header": {
                 "type": "Text",
                 "config": {
@@ -50,6 +57,14 @@
             "repeat": {}
           }
         }
+      }
+    }
+  },
+  "Meta": {
+    "page_title": {
+      "type": "Text",
+      "config": {
+        "label": "Page Title"
       }
     }
   }

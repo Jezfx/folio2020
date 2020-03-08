@@ -28,7 +28,9 @@ export default ({ content, styles }: Types.RichTextProps) => {
 
     if (hasMatch) {
       const Component = styles[type];
-      return <Component as={elementTypes[type]} children={children} />;
+      return (
+        <Component key={key} as={elementTypes[type]} children={children} />
+      );
     }
 
     return null;

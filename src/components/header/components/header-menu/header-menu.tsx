@@ -30,7 +30,7 @@ const Menu: React.FunctionComponent = (): JSX.Element => {
         {social_media_links.map(({ link_href, link_text }) =>
           Link(link_href, link_text)
         )}
-        {Link(email_address, email_address, true)}
+        {Link(`mailto:${email_address}`, email_address, true)}
       </Styles.List>
     </Styles.Container>
   );
