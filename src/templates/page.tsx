@@ -33,7 +33,7 @@ export const pageQuery = graphql`
                     raw
                   }
                 }
-                slice_label
+                slice_type
               }
             }
             hero {
