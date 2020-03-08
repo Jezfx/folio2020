@@ -9,7 +9,7 @@ module.exports = {
 
   // TODO: update the logo
   logo: "/logos/logo-1024.png",
-  ogLanguage: "en_US",
+  ogLanguage: "en_GB",
 
   // TODO: add image (for SEO twitter and FB OG tags)
   image: "",
@@ -24,7 +24,7 @@ module.exports = {
   backgroundColor: "#EBEDF2",
 
   twitter: "@jezfx",
-  googleAnalyticsID: "UA-47519312-7",
+  googleAnalyticsID: "UA-87937367-1",
 
   // TODO: add this skipNavId
   skipNavId: "reach-skip-nav"
