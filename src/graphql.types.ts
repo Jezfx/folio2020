@@ -4908,7 +4908,7 @@ export type PageBySlugQueryVariables = {
 export type PageBySlugQuery = { allPrismicPage: { edges: Array<{ node: { data: Maybe<(
           Pick<PrismicPageDataType, 'page_title'>
           & { body: Maybe<Array<Maybe<(
-            Pick<PrismicPageBodyContentSection, 'id' | 'slice_type' | 'slice_label'>
+            Pick<PrismicPageBodyContentSection, 'id' | 'slice_label'>
             & { primary: Maybe<(
               Pick<PrismicPageBodyContentSectionPrimaryType, 'content_section_header'>
               & { content_section_body: Maybe<Pick<PrismicStructuredTextType, 'raw'>> }
