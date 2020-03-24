@@ -1,5 +1,9 @@
 # Things to include in the blog
 
+[logo]: https://www.gatsbyjs.org/monogram.svg "Logo Title Text 2"
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+
 ### Rebass text theme
 
 Being able to define default theme styles from the theme file
