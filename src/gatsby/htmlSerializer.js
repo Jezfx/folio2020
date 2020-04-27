@@ -1,4 +1,5 @@
 import React from "react";
+import linkResolver from "../utils/linkResolver";
 import { Elements } from "prismic-reactjs";
 
 import { Paragon, GreatPrimer, BodyCopy } from "../components/text";
@@ -66,49 +67,49 @@ export const htmlSerializer = function(type, element, content, children, key) {
       return React.createElement(
         "pre",
         propsWithUniqueKey(props, key),
-        children
+        children,
       );
 
     case Elements.strong: // Strong
       return React.createElement(
         "strong",
         propsWithUniqueKey(props, key),
-        children
+        children,
       );
 
     case Elements.em: // Emphasis
       return React.createElement(
         "em",
         propsWithUniqueKey(props, key),
-        children
+        children,
       );
 
     case Elements.listItem: // Unordered List Item
-      return React.createElement(
-        "li",
-        propsWithUniqueKey(props, key),
-        children
+      return (
+        <BodyCopy {...propsWithUniqueKey(props, key)} as="li">
+          {children}
+        </BodyCopy>
       );
 
     case Elements.oListItem: // Ordered List Item
-      return React.createElement(
-        "li",
-        propsWithUniqueKey(props, key),
-        children
+      return (
+        <BodyCopy {...propsWithUniqueKey(props, key)} as="li">
+          {children}
+        </BodyCopy>
       );
 
     case Elements.list: // Unordered List
       return React.createElement(
         "ul",
         propsWithUniqueKey(props, key),
-        children
+        children,
       );
 
     case Elements.oList: // Ordered List
       return React.createElement(
         "ol",
         propsWithUniqueKey(props, key),
-        children
+        children,
       );
 
     case Elements.image: // Image
@@ -122,21 +123,21 @@ export const htmlSerializer = function(type, element, content, children, key) {
       const linkRel = linkTarget.target ? { rel: "noopener" } : {};
       const img = React.createElement("img", {
         src: element.url,
-        alt: element.alt || ""
+        alt: element.alt || "",
       });
       return React.createElement(
         "p",
         propsWithUniqueKey(
           { className: [element.label || "", "block-img"].join(" ") },
-          key
+          key,
         ),
         linkUrl
           ? React.createElement(
               "a",
               Object.assign({ href: linkUrl }, linkTarget, linkRel),
-              img
+              img,
             )
-          : img
+          : img,
       );
 
     case Elements.embed: // Embed
@@ -144,17 +145,17 @@ export const htmlSerializer = function(type, element, content, children, key) {
         {
           "data-oembed": element.oembed.embed_url,
           "data-oembed-type": element.oembed.type,
-          "data-oembed-provider": element.oembed.provider_name
+          "data-oembed-provider": element.oembed.provider_name,
         },
-        element.label ? { className: element.label } : {}
+        element.label ? { className: element.label } : {},
       );
       const embedHtml = React.createElement("div", {
-        dangerouslySetInnerHTML: { __html: element.oembed.html }
+        dangerouslySetInnerHTML: { __html: element.oembed.html },
       });
       return React.createElement(
         "div",
         propsWithUniqueKey(props, key),
-        embedHtml
+        embedHtml,
       );
 
     case Elements.hyperlink: // Image
@@ -164,10 +165,10 @@ export const htmlSerializer = function(type, element, content, children, key) {
       const relAttr = element.data.target ? { rel: "noopener" } : {};
       props = Object.assign(
         {
-          href: element.data.url || linkResolver(element.data)
+          href: element.data.url || linkResolver(element.data),
         },
         targetAttr,
-        relAttr
+        relAttr,
       );
       return React.createElement("a", propsWithUniqueKey(props, key), children);
 
@@ -178,7 +179,7 @@ export const htmlSerializer = function(type, element, content, children, key) {
       return React.createElement(
         "span",
         propsWithUniqueKey(props, key),
-        children
+        children,
       );
 
     case Elements.span: // Span
@@ -190,7 +191,7 @@ export const htmlSerializer = function(type, element, content, children, key) {
             const brIndex = (acc.length + 1) / 2 - 1;
             const br = React.createElement(
               "br",
-              propsWithUniqueKey({}, brIndex)
+              propsWithUniqueKey({}, brIndex),
             );
             return acc.concat([br, p]);
           }

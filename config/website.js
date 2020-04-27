@@ -27,5 +27,5 @@ module.exports = {
   googleAnalyticsID: "UA-87937367-1",
 
   // TODO: add this skipNavId
-  skipNavId: "reach-skip-nav"
+  skipNavId: "reach-skip-nav",
 };

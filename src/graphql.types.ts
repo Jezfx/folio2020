@@ -3109,6 +3109,8 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3337,6 +3339,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
@@ -3548,6 +3552,8 @@ export type SiteFieldsEnum =
   'siteMetadata___ogLanguage' |
   'siteMetadata___author' |
   'siteMetadata___twitter' |
+  'port' |
+  'host' |
   'pathPrefix' |
   'polyfill' |
   'id' |
@@ -3640,6 +3646,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5073,10 +5081,13 @@ export type MainMenuIconLinksQuery = { allPrismicGlobal: { edges: Array<{ node: 
 export type HomePageQueryQueryVariables = {};
 
 
-export type HomePageQueryQuery = { prismicHome?: Maybe<{ data?: Maybe<{ hero?: Maybe<Pick<PrismicStructuredTextType, 'html' | 'text' | 'raw'>>, body?: Maybe<Array<Maybe<{ primary?: Maybe<(
+export type HomePageQueryQuery = { prismicHome?: Maybe<{ data?: Maybe<{ hero?: Maybe<Pick<PrismicStructuredTextType, 'html' | 'text' | 'raw'>>, body?: Maybe<Array<Maybe<(
+        Pick<PrismicHomeBodyContentSection, 'id' | 'slice_type'>
+        & { primary?: Maybe<(
           Pick<PrismicHomeBodyContentSectionPrimaryType, 'icon' | 'content_section_header'>
           & { content_section_body?: Maybe<Pick<PrismicStructuredTextType, 'raw'>> }
-        )> }>>> }> }>, allPrismicGlobal: { edges: Array<{ node: { data?: Maybe<{ articles?: Maybe<Array<Maybe<(
+        )> }
+      )>>> }> }>, allPrismicGlobal: { edges: Array<{ node: { data?: Maybe<{ articles?: Maybe<Array<Maybe<(
             Pick<PrismicGlobalArticlesGroupType, 'title'>
             & { link?: Maybe<Pick<PrismicLinkType, 'raw'>> }
           )>>>, body?: Maybe<Array<Maybe<{ primary?: Maybe<Pick<PrismicGlobalBodyClientsPrimaryType, 'clients_year'>>, items?: Maybe<Array<Maybe<(
@@ -5094,7 +5105,7 @@ export type PageBySlugQuery = { allPrismicPage: { edges: Array<{ node: { data?: 
           & { body?: Maybe<Array<Maybe<(
             Pick<PrismicPageBodyContentSection, 'id' | 'slice_type'>
             & { primary?: Maybe<(
-              Pick<PrismicPageBodyContentSectionPrimaryType, 'content_section_header'>
+              Pick<PrismicPageBodyContentSectionPrimaryType, 'icon' | 'content_section_header'>
               & { content_section_body?: Maybe<Pick<PrismicStructuredTextType, 'raw'>> }
             )> }
           )>>>, hero?: Maybe<Pick<PrismicStructuredTextType, 'raw'>> }

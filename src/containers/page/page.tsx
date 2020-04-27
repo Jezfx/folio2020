@@ -1,7 +1,6 @@
 import React from "react";
 
 import RichText from "src/components/rich-text";
-import SectionWrapper from "src/components/section-wrapper";
 import Slicezone from "src/components/slicezone";
 import { GreatPrimer, BodyCopy } from "src/components/text";
 

@@ -1,8 +1,9 @@
 import React from "react";
 
 import RichText from "src/components/rich-text";
-import SectionWrapper from "src/components/section-wrapper";
+import Slicezone from "src/components/slicezone";
 import SocialIcons from "src/components/social-icons";
+import SectionWrapper from "src/components/section-wrapper";
 import { GreatPrimer, BodyCopy } from "src/components/text";
 
 import ClientList from "./components/home-client-list";
@@ -16,7 +17,7 @@ export default (): JSX.Element => {
   const { prismicHome, allPrismicGlobal } = Hooks.useHomePageQuery();
   const {
     articles: articlesList,
-    body: clientList
+    body: clientList,
   } = allPrismicGlobal.edges[0].node.data;
 
   return (
@@ -25,7 +26,7 @@ export default (): JSX.Element => {
         <>
           <RichText
             content={prismicHome.data.hero.raw}
-            styles={{ heading1: GreatPrimer, heading2: BodyCopy }}
+            styles={{ heading2: BodyCopy }}
           />
           <Styles.SocialIconsWrapper>
             <SocialIcons />
@@ -41,16 +42,7 @@ export default (): JSX.Element => {
         <ArticleList articles={articlesList} />
       </SectionWrapper>
 
-      {/* TODO: typecheck the section arg  */}
-      {prismicHome.data.body.map((section, index) => (
-        <SectionWrapper
-          key={index}
-          title={section.primary.content_section_header}
-          icon={section.primary.icon}
-          content={section.primary.content_section_body.raw}
-          styles={Styles.CustomSectionWrapperStyles}
-        />
-      ))}
+      <Slicezone body={prismicHome.data.body} />
     </Styles.Container>
   );
 };

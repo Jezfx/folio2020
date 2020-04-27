@@ -1,13 +1,9 @@
 import styled, { StyledComponent } from "styled-components";
-import { Paragon, BodyCopy } from "src/components/text";
+import { GreatPrimer, BodyCopy } from "src/components/text";
 
 import { breakpoints } from "src/utils/theme/theme";
 
-export const ClientList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-`;
+export { List as ClientList } from "../../home.styles";
 
 export const ClientItem: StyledComponent<any, any, any> = styled.li`
   margin-bottom: 20px;
@@ -19,7 +15,7 @@ export const ClientItem: StyledComponent<any, any, any> = styled.li`
   }
 `;
 
-export const ClientLink: StyledComponent<any, any, any> = styled(Paragon)`
+export const ClientLink: StyledComponent<any, any, any> = styled(GreatPrimer)`
   text-decoration: none;
   margin-right: 10px !important;
 

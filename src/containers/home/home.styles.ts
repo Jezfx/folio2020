@@ -22,3 +22,15 @@ export const SocialIconsWrapper = styled.div`
     display: none;
   }
 `;
+
+export const List = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li,
+  span,
+  a {
+    line-height: 57px;
+  }
+`;

@@ -1,5 +1,6 @@
 import React from "react";
 import { RichText } from "prismic-reactjs";
+import { htmlSerializer as defaultSerializer } from "src/gatsby/htmlSerializer";
 
 import * as Types from "./rich-text.types";
 
@@ -13,7 +14,7 @@ const elementTypes: Types.ElementTypes = {
   paragraph: "p",
   preformatted: "pre",
   strong: "strong",
-  em: "em"
+  em: "em",
 };
 
 export default ({ content, styles }: Types.RichTextProps) => {
@@ -33,7 +34,7 @@ export default ({ content, styles }: Types.RichTextProps) => {
       );
     }
 
-    return null;
+    return defaultSerializer(type, element, content, children, key);
   };
 
   return <RichText render={content} htmlSerializer={htmlSerializer} />;

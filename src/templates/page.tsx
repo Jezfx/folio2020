@@ -28,6 +28,7 @@ export const pageQuery = graphql`
               ... on PrismicPageBodyContentSection {
                 id
                 primary {
+                  icon
                   content_section_header
                   content_section_body {
                     raw

@@ -16,6 +16,7 @@ export const useHomePageQuery = (): HomePageQueryQuery => {
             }
             body {
               ... on PrismicHomeBodyContentSection {
+                id
                 primary {
                   icon
                   content_section_header
@@ -23,6 +24,7 @@ export const useHomePageQuery = (): HomePageQueryQuery => {
                     raw
                   }
                 }
+                slice_type
               }
             }
           }

@@ -1,13 +1,9 @@
 import styled, { StyledComponent } from "styled-components";
-import { Paragon } from "src/components/text";
 
+import { GreatPrimer } from "src/components/text";
 import { breakpoints } from "src/utils/theme/theme";
 
-export const ArticlesList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-`;
+export { List as ArticlesList } from "../../home.styles";
 
 export const ArticleItem: StyledComponent<any, any, any> = styled.li`
   margin-bottom: 25px;
@@ -17,6 +13,6 @@ export const ArticleItem: StyledComponent<any, any, any> = styled.li`
   }
 `;
 
-export const ArticleLink: StyledComponent<any, any, any> = styled(Paragon)`
+export const ArticleLink: StyledComponent<any, any, any> = styled(GreatPrimer)`
   text-decoration: none;
 `;

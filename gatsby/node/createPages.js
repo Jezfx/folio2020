@@ -27,8 +27,8 @@ module.exports = async ({ graphql, actions }) => {
         path: `/${edge.node.uid}`,
         component: path.resolve("src/templates/page.tsx"),
         context: {
-          uid: edge.node.uid
-        }
+          uid: edge.node.uid,
+        },
       });
     });
   }

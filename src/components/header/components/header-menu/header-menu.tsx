@@ -21,7 +21,7 @@ const Menu: React.FunctionComponent = (): JSX.Element => {
   const mainMenuLinks = Hooks.useMainMenuLinks();
   const {
     email_address,
-    social_media_links
+    social_media_links,
   } = mainMenuLinks.allPrismicGlobal.edges[0].node.data!;
 
   return (

@@ -37,12 +37,15 @@ export const ContentWrapper: StyledComponent<any, any, any> = styled(Box)`
   padding-top: 20px;
   max-width: 680px;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-bottom: 30px;
+  h1 {
+    margin: 20px 0;
+  }
+
+  p {
+    margin: 10px 0 20px 0;
+  }
+
+  a {
+    text-decoration: underline;
   }
 `;
