@@ -20,7 +20,7 @@ module.exports = {
     ogLanguage: website.ogLanguage,
     author: website.author,
     twitter: website.twitter,
-    facebook: website.facebook
+    facebook: website.facebook,
   },
   plugins: [
     "gatsby-plugin-theme-ui",
@@ -28,8 +28,8 @@ module.exports = {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
         fileName: `./src/graphql.types.ts`,
-        codegenDelay: 100000
-      }
+        codegenDelay: 100000,
+      },
     },
     {
       resolve: "gatsby-source-prismic",
@@ -39,38 +39,38 @@ module.exports = {
         schemas: {
           page: require("./src/schemas/page.json"),
           home: require("./src/schemas/home.json"),
-          global: require("./src/schemas/global.json")
-        }
+          global: require("./src/schemas/global.json"),
+        },
         // htmlSerializer: () => prismicHtmlSerializer
-      }
+      },
     },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /\.inline\.svg$/
-        }
-      }
+          include: /\.inline\.svg$/,
+        },
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     {
       resolve: "gatsby-plugin-root-import",
       options: {
-        src: path.join(__dirname, "./src")
-      }
+        src: path.join(__dirname, "./src"),
+      },
     },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        displayName: false
-      }
+        displayName: false,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -84,11 +84,11 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png` // This path is relative to the root of the site.
-      }
-    }
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ]
+  ],
 };
