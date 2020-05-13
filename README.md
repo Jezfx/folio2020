@@ -1,4 +1,4 @@
-# Things to include in the blog
+# Things to include in the blog.
 
 [logo]: https://www.gatsbyjs.org/monogram.svg "Logo Title Text 2"
 
